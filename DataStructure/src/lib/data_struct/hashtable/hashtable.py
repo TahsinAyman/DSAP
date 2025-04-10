@@ -18,6 +18,9 @@ class HashTable:
     self.arr = [0] * load_factor
     self.load_factor = load_factor
 
+  # O(n) - Linear
+  # Ω(1) - Constant
+  # Θ(1) - Constant
   def add(self, key: Hash, value):
     i = key.hash() % self.load_factor
     if self.arr[i] == 0:
@@ -28,6 +31,9 @@ class HashTable:
       n.next = tmp
       self.arr[i] = n
   
+  # O(n) - Linear
+  # Ω(1) - Constant
+  # Θ(1) - Constant
   def get(self, key: Hash):
     i = key.hash() % self.load_factor
     curr = self.arr[i]
@@ -36,6 +42,7 @@ class HashTable:
         return curr.val[1]
       curr = curr.next
     return None
+
 
 if __name__ == "__main__":
   hashTable = HashTable()
