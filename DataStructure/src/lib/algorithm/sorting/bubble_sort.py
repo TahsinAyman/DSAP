@@ -1,5 +1,6 @@
 # O(n^2)
 def bubble_sort(l: list, inplace: bool = False, asc = True):
+  global cnt
   lst = []
   if not inplace:
     lst = l.copy()
@@ -21,5 +22,5 @@ def bubble_sort(l: list, inplace: bool = False, asc = True):
   return lst
 
 if __name__ == "__main__":
-  lst = [5, 1, 3, 6]
+  lst = [12,32,543,67,235,7,23,51,74,215,73,15,73,154,51,37,9]
   print(bubble_sort(lst))
