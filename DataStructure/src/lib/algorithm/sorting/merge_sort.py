@@ -6,7 +6,6 @@ def rec_asc(lst):
   l2 = rec_asc(lst[half:])
   p1, p2 = 0, 0
   res = []
-  visited = [False, False]
   while True:
     if l1[p1] < l2[p2]:
       res.append(l1[p1])
