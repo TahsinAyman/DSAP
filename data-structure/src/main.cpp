@@ -3,8 +3,14 @@
 
 int main(void) {
   ArrayList* list = ArrayList::create();
-  for (int i = 0; i < 20; i++) {
-    list->add(i);
+  while (1) {
+    int x;
+    std::cout << "Value: ";
+    std::cin >> x;
+    if (x == -1) {
+      break;
+    }
+    list->add(x);
   }
   std::cout << list->toString() << std::endl;
   return 0;

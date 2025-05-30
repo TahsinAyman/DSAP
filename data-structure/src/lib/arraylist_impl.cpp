@@ -7,6 +7,7 @@ class ArrayListImpl : public ArrayList {
     int* arr;
     int count = 0;
     int size;
+    const double threshold = 0.75;
 
     void increaseSize() {
       int reach = this->count - 1;
@@ -24,7 +25,7 @@ class ArrayListImpl : public ArrayList {
       this->arr = new int[this->loadFactor];
     }
     void add(int item) override {
-      if (this->size - 3 < this->count) {
+      if (this->size * this->threshold < this->count) {
         this->increaseSize();
       }
       this->arr[count] = item;
