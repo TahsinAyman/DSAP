@@ -1,4 +1,3 @@
-#include <iostream>
 #include <arraylist.h>
 
 class ArrayListImpl : public ArrayList {
