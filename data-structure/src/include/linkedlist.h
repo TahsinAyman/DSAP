@@ -1,6 +1,17 @@
-class LinkedList {
-  virtual ~LinkedList() = default;
-  static LinkedList* create();
+#include <iostream>
 
-  virtual void add(int item);
+template<typename T>
+class LinkedList {
+  public:
+    virtual ~LinkedList() = default;
+    static LinkedList<T>* create();
+
+    virtual void add(T item) = 0; 
+    virtual T get(int index) = 0;
+    virtual void remove(int index) = 0;
+
+    virtual std::string toString() = 0;
 };
+
+extern template class LinkedList<int>;
+extern template class LinkedList<std::string>;
